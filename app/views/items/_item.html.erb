@@ -1,0 +1,9 @@
+<li id="item-<%= item.id %>">
+  <span class="user"><%= link_to item.user.name, item.user %></span>
+  <span class="category"><%= item.category %></span>
+  <span class="season"><%= item.season %></span>
+  <span class="description"><%= item.description %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(item.created_at) %> ago.
+  </span>
+</li>
