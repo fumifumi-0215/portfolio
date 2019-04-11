@@ -1,0 +1,43 @@
+<%= form_for(@item) do |f| %>
+<%= render 'shared/error_messages', object: f.object  %>
+
+<table class = "table-bordered table-condensed">
+<td>
+ <p2>ユーザー名</p2><br>
+<%= current_user.name %><br>
+<p1>タイトル</p1>
+<%= f.text_field :name, class: "hogehoge" %>
+<p1>カテゴリー</p1>
+<%= f.select :category, [["旅行", "旅行"], ["仕事", "仕事"],  ["40代", "40代"], ["50代以上", "50代"],["60代以上", "60代以上"] ],  :prompt => "選択してください" %><br>
+
+
+<p1>季節</p1><br>
+&nbsp<label><%= f.radio_button :season, "春" %>春</label>&nbsp&nbsp&nbsp
+<label><%= f.radio_button :season, "夏" %>夏</label>&nbsp&nbsp&nbsp
+<label><%= f.radio_button :season, "秋" %>秋</label>&nbsp&nbsp&nbsp
+<label><%= f.radio_button :season, "冬" %>冬</label><br>
+
+
+<p1>コメント</p1>
+<%= f.text_area :description, class: "hogehoge"  %>
+
+
+<span class="picture">
+  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+ <p>画像を削除する<%= f.check_box :remove_picture %></p>
+</span>
+ <%= f.submit "決定" %>
+<% end %>
+
+<script type="text/javascript">
+  $('#item_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>
+
+</td>
+ </table>
+

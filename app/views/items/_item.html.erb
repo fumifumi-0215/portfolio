@@ -1,9 +1,26 @@
 <li id="item-<%= item.id %>">
-  <span class="user"><%= link_to item.user.name, item.user %></span>
-  <span class="category"><%= item.category %></span>
-  <span class="season"><%= item.season %></span>
+  <table class = "table-bordered table-condensed">
+     <td>
+  <p1>・投稿者</p1>
+  <span class="user"><%= item.user.name %></span><br>
+   <p1>・タイトル</p1>
+  <span class="name"><%= item.name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;投稿日<%= item.created_at.strftime('%Y/%m/%d') %></span><br>
+  
+  <div style="text-align:center;"> <%= image_tag item.picture.url if item.picture? %></div><br>
+  
+  <p1>・カテゴリー</p1><br>
+  <span class="category"><%= item.category %></span><br>
+  <p1>・季節</p1><br>
+  <span class="season"><%= item.season %></span><br>
+  <p1>・コメント</p1><br>
   <span class="description"><%= item.description %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(item.created_at) %> ago.
+    
+  <span class="delete2">
+　<% if current_user?(item.user) %>
+  <%= link_to "投稿を削除する", item, method: :delete,
+                              data: { confirm: "削除してよろしいでしょうか？" } %>
+    <% end %>
   </span>
+  </td>
+ </table>
 </li>

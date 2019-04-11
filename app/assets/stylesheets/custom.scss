@@ -60,6 +60,7 @@ p {
 }
 
 
+
 /* header */
 
 #logo {
@@ -161,22 +162,62 @@ input, textarea, select, .uneditable-input {
     border-top: 1px solid #e8e8e8;
   }
   .user {
+    font-size: 110%;
     margin-top: 5em;
     padding-top: 0;
   }
+    .name {
+    font-size: 110%;
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .category {
+    font-size: 110%;
+    margin-top: 30em;
+    padding-top: 0;
+    margin-left: 15px;
+  }
+   .season {
+    font-size: 110%;
+    margin-top: 5em;
+    padding-top: 0;
+    margin-left: 15px;
+  }
+   .picture {
+   height: 100px;
+    position: relative;
+    text-align: center;
+    width: 100px;
+    
+  }
   .description {
+    font-size: 110%;
     display: block;
-    margin-left: 60px;
+    margin-left: 15px;
     img {
       display: block;
       padding: 5px 0;
+      text-align: center;
     }
   }
   .timestamp {
-    color: $gray-light;
+    font-size: 110%;
     display: block;
-    margin-left: 60px;
+    margin-left: 600px;
   }
+  
+  .delete2 {
+    font-size: 110%;
+    display: block;
+    padding-top: 0;
+    margin-left: 610px;
+  }
+  
+  
+  p1 {
+  font-size: 110%;
+  line-height: 1.7em;
+ }
 }
 
 aside {
@@ -191,4 +232,8 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+table td{
+  background: #eaeaea;
 }
